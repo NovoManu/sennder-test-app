@@ -2,28 +2,45 @@
   <div id="app">
     <div class="c-tabs">
       <div class="c-tabs__header">
-        <TabHeader text="Employer" :active="tab === 'employer'" @click="tab = 'employer'" />
-        <TabHeader text="Employee" :active="tab === 'employee'" @click="tab = 'employee'" />
+        <TabHeader
+          text="Employer"
+          :active="tab === 'employer'"
+          @click="tab = 'employer'"
+        />
+        <TabHeader
+          text="Employee"
+          :active="tab === 'employee'"
+          @click="tab = 'employee'"
+        />
       </div>
       <div class="c-tabs__content">
-        <Wrapper
-          :tab="tab"
-        >
+        <Wrapper :tab="tab">
           <template #employer>
-            <TabContent text="Enter maximum offer" />
+            <TabContent
+              v-model="offer"
+              text="Enter maximum offer"
+              @submit="submit"
+            />
           </template>
           <template #employee>
-            <TabContent text="Enter minimum salary" />
+            <TabContent
+              v-model="salary"
+              text="Enter minimum salary"
+              @submit="submit"
+            />
           </template>
         </Wrapper>
       </div>
     </div>
-    <Modal v-if="tabActive">
-      <div class="c-content">
-        <h2 class="has-text-success has-text-center">Success!</h2>
-        <p>Maximum offer was: 50 000$</p>
-        <p>Maximum expected salary was: 50 000$</p>
-      </div>
+    <Modal v-if="tabActive" @close="tabActive = false">
+      <h2
+        class="has-text-center"
+        :class="isSuccess ? 'has-text-success' : 'has-text-danger'"
+      >
+        {{ isSuccess ? 'Success!' : 'Failure!' }}
+      </h2>
+      <p>Maximum offer was: {{ offer }}$</p>
+      <p>Maximum expected salary was: {{ salary }}$</p>
     </Modal>
   </div>
 </template>
@@ -36,13 +53,19 @@ import TabContent from '@/components/TabContent.vue'
 import TabHeader from '@/components/TabHeader.vue'
 
 @Component({
-  components: {TabContent, Wrapper, TabHeader, Modal}
+  components: { TabContent, Wrapper, TabHeader, Modal }
 })
 export default class App extends Vue {
   protected salary: number = 0
   protected offer: number = 0
   protected tab: string = 'employer'
   private tabActive: boolean = false
+  private isSuccess: boolean = true
+
+  private submit(): void {
+    this.tabActive = true
+    this.isSuccess = this.offer >= this.salary
+  }
 }
 </script>
 
@@ -64,7 +87,7 @@ export default class App extends Vue {
   position: relative;
   white-space: normal;
   border-radius: $radius;
-  box-shadow: $box-shadow;
+  box-shadow: 5px 5px 20px 0 rgba(204, 204, 207, 0.32);
 
   &__header {
     width: 100%;

@@ -2,19 +2,19 @@
   <button ref="sn-button" class="g-btn" v-on="$listeners">{{ text }}</button>
 </template>
 <script lang="ts">
-  import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
-  @Component
-  export default class Button extends Vue {
-    @Prop({ required: false, default: 'Button'}) private text!: string
-  }
+@Component
+export default class Button extends Vue {
+  @Prop({ required: false, default: 'Button' }) private text!: string
+}
 </script>
 <style lang="scss">
 @import '../../assets/scss/app';
 $button-border-width: 1px;
 
-$button-padding-vertical: calc(0.375em - #{$button-border-width});
-$button-padding-horizontal: 1.5em;
+$button-padding-vertical: calc(0.375rem - #{$button-border-width});
+$button-padding-horizontal: 1.5rem;
 .g-btn {
   align-items: center;
   background: transparent;
@@ -28,6 +28,7 @@ $button-padding-horizontal: 1.5em;
   display: inline-flex;
   flex: 0 0 auto;
   font-size: 16px;
+  text-transform: uppercase;
   justify-content: center;
   outline: 0;
   padding: $button-padding-vertical $button-padding-horizontal;

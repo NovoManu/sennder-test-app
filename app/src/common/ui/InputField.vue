@@ -3,20 +3,22 @@
     <label class="c-text-field__label">{{ label }}</label>
     <input
       ref="sn-input-field"
+      :value="value"
       :type="type"
       class="c-text-field__input"
-      @input="$emit('input', $event)"
-    >
+      @input="$emit('input', $event.target.value)"
+    />
   </div>
 </template>
 <script lang="ts">
-  import { Component, Vue, Prop } from 'nuxt-property-decorator'
+import { Component, Vue, Prop } from 'nuxt-property-decorator'
 
-  @Component
-  export default class InputField extends Vue {
-    @Prop({required: false, default: 'Label'}) private label!: string
-    @Prop({required: false, default: 'text'}) private type!: string
-  }
+@Component
+export default class InputField extends Vue {
+  @Prop({ required: true }) private value!: number | string
+  @Prop({ required: false, default: 'Label' }) private label!: string
+  @Prop({ required: false, default: 'text' }) private type!: string
+}
 </script>
 <style lang="scss">
 @import '../../assets/scss/app';
@@ -27,10 +29,10 @@
     box-shadow: none;
     display: inline-flex;
     font-size: $size-6;
-    height: 2.25em;
+    height: 2.25rem;
     justify-content: flex-start;
     line-height: 1.5;
-    padding: calc(0.375em - 1px) calc(0.625em - 1px);
+    padding: calc(0.375rem - 1px) calc(0.625rem - 1px);
     position: relative;
     vertical-align: top;
     max-width: 100%;
@@ -42,7 +44,7 @@
     &:focus {
       outline: none;
       border-color: $primary;
-      box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+      box-shadow: 0 0 0 0.125rem rgba(50, 115, 220, 0.25);
       background-color: $white;
     }
   }

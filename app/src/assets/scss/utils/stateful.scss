@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 .has-text-center {
   text-align: center;
@@ -8,4 +8,7 @@
 }
 .has-text-danger {
   color: $danger;
+}
+.u-mt-3 {
+  margin-top: 1.5rem;
 }
