@@ -1,7 +1,12 @@
 <template>
   <div class="c-text-field">
     <label class="c-text-field__label">{{ label }}</label>
-    <input :type="type" class="c-text-field__input" @input="$emit('input', $event)">
+    <input
+      ref="sn-input-field"
+      :type="type"
+      class="c-text-field__input"
+      @input="$emit('input', $event)"
+    >
   </div>
 </template>
 <script lang="ts">

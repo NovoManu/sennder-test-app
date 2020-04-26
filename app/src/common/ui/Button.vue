@@ -1,5 +1,5 @@
 <template>
-  <button class="g-btn" v-on="$listeners">{{ text }}</button>
+  <button ref="sn-button" class="g-btn" v-on="$listeners">{{ text }}</button>
 </template>
 <script lang="ts">
   import { Component, Vue, Prop } from 'nuxt-property-decorator'
