@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import Button from '../Button.vue'
 
-describe('InputField.vue', () => {
+describe('Button.vue', () => {
   it('render button', () => {
     const wrapper = mount(Button, {
       propsData: {
