@@ -4,11 +4,13 @@
       <div class="c-tabs__header">
         <TabHeader
           text="Employer"
+          ref="tab-header-employer"
           :active="tab === 'employer'"
           @click="tab = 'employer'"
         />
         <TabHeader
           text="Employee"
+          ref="tab-header-employee"
           :active="tab === 'employee'"
           @click="tab = 'employee'"
         />
@@ -18,6 +20,7 @@
           <template #employer>
             <TabContent
               v-model="offer"
+              ref="tab-content-offer"
               text="Enter maximum offer"
               @submit="submit"
             />
@@ -25,6 +28,7 @@
           <template #employee>
             <TabContent
               v-model="salary"
+              ref="tab-content-salary"
               text="Enter minimum salary"
               @submit="submit"
             />

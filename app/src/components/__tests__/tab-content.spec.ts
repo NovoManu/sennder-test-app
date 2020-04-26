@@ -5,32 +5,27 @@ import Button from '@/common/ui/Button.vue'
 
 const prefix = 'sn'
 
+const createWrapper = () => {
+  const localVue = createLocalVue()
+  localVue.component(`${prefix}-input-field`, InputField)
+  localVue.component(`${prefix}-button`, Button)
+  return mount(TabContent, {
+    localVue,
+    propsData: {
+      text: 'My tab',
+      value: 23
+    }
+  })
+}
+
 describe('TabContent.vue', () => {
   it('render tab-content component', () => {
-    const localVue = createLocalVue()
-    localVue.component(`${prefix}-input-field`, InputField)
-    localVue.component(`${prefix}-button`, Button)
-    const wrapper = mount(TabContent, {
-      localVue,
-      propsData: {
-        text: 'My tab',
-        value: 23
-      }
-    })
+    const wrapper = createWrapper()
     expect(wrapper.props().text).toBe('My tab')
     expect(wrapper.props().value).toBe(23)
   })
   it('test tab-content component events', () => {
-    const localVue = createLocalVue()
-    localVue.component(`${prefix}-input-field`, InputField)
-    localVue.component(`${prefix}-button`, Button)
-    const wrapper = mount(TabContent, {
-      localVue,
-      propsData: {
-        text: 'My tab',
-        value: 23
-      }
-    })
+    const wrapper = createWrapper()
     wrapper.vm.$emit('input', 12)
     wrapper.vm.$emit('click')
     expect(wrapper.emitted().input.length).toBe(1)
