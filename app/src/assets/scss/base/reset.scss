@@ -1,0 +1,15 @@
+@import "../utils/all";
+
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+  }
+}
+
+html,
+body{
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,33 @@
+@import "../utils/all";
+
+$body-size: 14px;
+$body-min-width: 300px;
+$body-rendering: optimizeLegibility;
+$body-overflow-x: hidden;
+$body-overflow-y: scroll;
+
+$body-family: 'Roboto', sans-serif;
+$body-color: $grey;
+$body-background: $blue-light;
+$body-font-size: 1em;
+$body-line-height: 1.5;
+
+html {
+  font-size: $body-size;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  min-width: $body-min-width;
+  overflow-x: $body-overflow-x;
+  overflow-y: $body-overflow-y;
+  text-rendering: $body-rendering;
+  text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $body-family;
+  background: $body-background;
+  color: $body-color;
+  font-size: $body-font-size;
+  line-height: $body-line-height;
+}

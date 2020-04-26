@@ -1,0 +1,46 @@
+@import './functions.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,500&display=swap');
+// Colors
+
+$white-bis: rgb(250, 250, 250);
+$white: rgb(255, 255, 255);
+
+$grey-dark: rgb(55, 62, 75);
+$grey: rgb(78, 86, 100);
+$grey-light: rgb(151, 151, 151);
+$grey-lighter: rgba(204, 204, 207, 0.53);
+
+$blue-darken: rgb(0, 96, 255);
+$blue-dark: rgb(74, 162, 231);
+$blue: rgb(85, 180, 254);
+$blue-lighter: rgb(87, 205, 235);
+$blue-light: setTransparency($blue-darken, 0.04);
+
+$red: rgb(195, 60, 84);
+
+
+$green: rgb(38, 189, 0);
+
+$primary: $blue;
+$primary-active: $blue-dark;
+
+$danger: $red;
+$success: $green;
+
+
+$box-shadow: 5px 5px 20px 0 rgba(204, 204, 207, 0.32);
+// Typography
+
+$family-monospace: monospace;
+$render-mode: optimizeLegibility;
+
+$size-6: 1rem;
+$size-7: 0.857rem;
+
+$weight-normal: 400;
+$weight-medium: 500;
+
+// Miscellaneous
+
+$radius: 4px;
+$radius-large: 6px;
