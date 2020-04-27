@@ -1,34 +1,47 @@
 # app
 
-## Project setup
+## Setup env file
+
 ```
+touch app/.env
+```
+
+`add VUE_APP_OPEN_WEATHER_MAP_API_KEY={your_api_key}`
+
+## Project setup using docker
+
+```
+docker-compose build
+
+docker-compose up
+
+Browse the project at http://localhost:8080
+```
+
+## Project setup using npm
+
+```
+cd app
+
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
 npm run serve
-```
 
-### Compiles and minifies for production
-```
-npm run build
+Browse the project at http://localhost:8080
 ```
 
 ### Run your tests
-```
-npm run test
-```
 
-### Lints and fixes files
 ```
-npm run lint
-```
+cd app
 
-### Run your unit tests
-```
 npm run test:unit
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### Lints and fixes files
+
+```
+cd app
+
+npm run format
+```
