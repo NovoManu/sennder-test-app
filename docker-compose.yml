@@ -4,6 +4,8 @@ services:
     build:
       context: app
     command: npm run serve
+    env_file:
+      - app/.env
     environment:
       PORT: '8080'
       HOST: '0.0.0.0'

@@ -13,6 +13,8 @@
     "quotemark": [true, "single"],
     "trailing-comma": [false],
     "semicolon": [true, "never"],
-    "arrow-parens": [true, "ban-single-arg-parens"]
+    "arrow-parens": [true, "ban-single-arg-parens"],
+    "no-console": false,
+    "no-bitwise": false
   }
 }

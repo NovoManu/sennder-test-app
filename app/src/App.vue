@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <CastComponent />
     <div class="c-tabs">
       <div class="c-tabs__header">
         <TabHeader
@@ -55,9 +56,10 @@ import Wrapper from '@/common/Wrapper.vue'
 import Modal from '@/common/Modal.vue'
 import TabContent from '@/components/TabContent.vue'
 import TabHeader from '@/components/TabHeader.vue'
+import CastComponent from '@/components/CastComponent.vue'
 
 @Component({
-  components: { TabContent, Wrapper, TabHeader, Modal }
+  components: { TabContent, Wrapper, TabHeader, Modal, CastComponent }
 })
 export default class App extends Vue {
   protected salary: number = 0
